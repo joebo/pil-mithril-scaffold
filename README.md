@@ -39,6 +39,9 @@ The api-gen-methods call will generate the following methods for each of the +Ap
 1. -update-json
 1. -del-json
 
+# Scaffolding
+
+Scaffolding is an optional way to enable and extend simple crud screens for entities. Scaffolding can be integrated into an app with custom screens as shown in https://github.com/joebo/pil-mithril-todo
 
 # example app.l
 
@@ -134,3 +137,9 @@ It can be helpful during development to have the page automatically refresh upon
           (websocket-send-text Socket "foo")))
 
     (add-hook 'after-save-hook 'refresh-save-hook)
+
+
+## picolisp autorefresh
+
+    # this will reload after each request, not good for prod
+    # (if *Dbg (daemon 'http (load "app.l")))
