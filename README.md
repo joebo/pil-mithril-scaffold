@@ -6,7 +6,7 @@ Tested on linux and windows (https://github.com/joebo/picoLisp-win-x86-64)
 
 Dependencies: https://github.com/joebo/pil-bcrypt
 
-Launching: `pil pil @lib/http.l @lib/xhtml.l @lib/json.l lib\bcrypt.l lib\web.l app\app.l -main -go`
+Launching: `pil @lib/http.l @lib/xhtml.l @lib/json.l lib\bcrypt.l lib\web.l app\app.l -main -go`
 
 Tests: `mocha test/test.js`
 # app.l
