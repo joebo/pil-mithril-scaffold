@@ -1,0 +1,49 @@
+<!doctype html>
+<title>Todo</title>
+ <head>
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+
+    <link href="/vendor/milligram.min.css" rel="stylesheet" type="text/css"></link>
+
+    <!-- in production you'd want to bundle these together -->
+    <script src="/vendor/mithril.min.js"></script>
+    <script src="/lib/js/mithril-pil.js"></script>
+    <script src="/lib/js/scaffold.js"></script>
+
+    <script src="/app/js/navigation.js"></script>
+    <script src="/app/js/login.js"></script>        
+    <script src="/app/js/app.js"></script>
+    
+    <style>
+        input.button-small {
+          font-size: .8rem;
+          height: 2.8rem;
+          line-height: 2.8rem;
+          padding: 0 1.5rem;
+        }
+        #navbar a { margin-right: 10px; }
+        .action input.button-small { margin-right: 2px; }
+        </style>
+  </head>
+<body>
+   <div class="container">
+        <div>
+            <div class="row" id="nav">
+            </div>
+       </div>
+        <div class="row">
+            <div class="column column-75" id="app"></div>
+        </div>
+    </div>
+<script>
+    var routes = {
+        "/" : new login()
+    }
+    routeBuilders.forEach(function(build) { build(routes); });
+    m.route.mode = "hash";
+    m.route(document.getElementById("app"), "/", routes);
+    m.mount(document.getElementById("nav"), new navigation());
+</script>
+</body>
+
