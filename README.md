@@ -13,6 +13,10 @@ Tests: `mocha test/test.js`
 
 An example app.l should include the entities (or in an er.l) and a call to `(api-gen-methods ...)` example:  `(api-gen-methods '(+Todo +Task))`
 
+## demo
+
+![demo](https://cloud.githubusercontent.com/assets/151573/18569188/17cbf45a-7b6f-11e6-822f-45b02fea9020.gif)
+
 ## Entities
 
 Entities are defined similar to normal picoLisp entities. The key difference is to use +ApiEntity instead of +Entity. +ApiEntity includes some conventions to simplify programming. For example, every entity is reffered to by its nr key. Each entity also tracks the user that created it in the usr symbol
