@@ -71,6 +71,9 @@
 
 (de auth ()
     (let Session (db 'key '+Session *Session)
+         (unless Session
+           (json-out "error" "noauth")
+           (throw 'http) )
         (setq *User (; Session usr))
          (ifn (> (- (ts) (; Session ts)) *SessionTimeout)
               (put!> Session 'ts (ts))
